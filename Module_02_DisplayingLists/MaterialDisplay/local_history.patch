@@ -1,0 +1,109 @@
+Index: app/src/main/java/com/example/tungninja/materialdisplay/VivzAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/tungninja/materialdisplay/VivzAdapter.java	(revision )
++++ app/src/main/java/com/example/tungninja/materialdisplay/VivzAdapter.java	(revision )
+@@ -22,7 +22,7 @@
+ 
+     private LayoutInflater inflater;
+ 
+-    List<Information> data = new ArrayList<>();
++    List<Information> data;
+ 
+     public  VivzAdapter(Context context, List<Information> data){
+         this.inflater = LayoutInflater.from(context);
+Index: app/src/main/java/com/example/tungninja/materialdisplay/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/tungninja/materialdisplay/MainActivity.java	(revision )
++++ app/src/main/java/com/example/tungninja/materialdisplay/MainActivity.java	(revision )
+@@ -11,49 +11,53 @@
+ import android.view.Menu;
+ import android.view.MenuItem;
+ 
+-public class MainActivity extends AppCompatActivity {
++public class MainActivity {
+ 
++    private final MyAppCompatActivity aaaa = new MyAppCompatActivity();
+     private Toolbar toolbar;
++
++    private class MyAppCompatActivity extends AppCompatActivity {
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_main);
++        @Override
++        protected void onCreate(Bundle savedInstanceState) {
++            super.onCreate(savedInstanceState);
++            setContentView(R.layout.activity_main);
+ 
+-        toolbar = (Toolbar) findViewById(R.id.app_bar);
+-        setSupportActionBar(toolbar);
++            toolbar = (Toolbar) findViewById(R.id.app_bar);
++            setSupportActionBar(toolbar);
+ 
+-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
++            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+ 
+-        NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
+-                getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
++            NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
++                    getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+ 
+-        drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
++            drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
+ 
+-    }
++        }
+ 
+-    @Override
+-    public boolean onCreateOptionsMenu(Menu menu) {
+-        // Inflate the menu; this adds items to the action bar if it is present.
+-        getMenuInflater().inflate(R.menu.menu_main, menu);
+-        return true;
+-    }
++        @Override
++        public boolean onCreateOptionsMenu(Menu menu) {
++            // Inflate the menu; this adds items to the action bar if it is present.
++            getMenuInflater().inflate(R.menu.menu_main, menu);
++            return true;
++        }
+ 
+-    @Override
+-    public boolean onOptionsItemSelected(MenuItem item) {
+-        // Handle action bar item clicks here. The action bar will
+-        // automatically handle clicks on the Home/Up button, so long
+-        // as you specify a parent activity in AndroidManifest.xml.
+-        int id = item.getItemId();
++        @Override
++        public boolean onOptionsItemSelected(MenuItem item) {
++            // Handle action bar item clicks here. The action bar will
++            // automatically handle clicks on the Home/Up button, so long
++            // as you specify a parent activity in AndroidManifest.xml.
++            int id = item.getItemId();
+ 
+-        //noinspection SimplifiableIfStatement
+-        if (id == R.id.action_settings) {
+-            return true;
+-        }
++            //noinspection SimplifiableIfStatement
++            if (id == R.id.action_settings) {
++                return true;
++            }
+ 
+-        if (id == R.id.navigrate){
+-            startActivity(new Intent(this, SubActicity.class));
+-        }
++            if (id == R.id.navigrate){
++                startActivity(new Intent(this, SubActicity.class));
++            }
+ 
+-        return super.onOptionsItemSelected(item);
++            return super.onOptionsItemSelected(item);
++        }
+     }
+ }
