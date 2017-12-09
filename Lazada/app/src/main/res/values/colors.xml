@@ -7,4 +7,9 @@
     <color name="colorWhite">#FFF</color>
     <color name="colorLogo">#F67133</color>
     <color name="colorGray">#CCC</color>
+
+    <color name="colorFacebook">#4a6ea9</color>
+    <color name="colorGoole">#da4835</color>
+
+    <color name="colorBlack">#000000</color>
 </resources>

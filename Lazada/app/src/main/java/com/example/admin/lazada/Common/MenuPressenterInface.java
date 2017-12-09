@@ -1,5 +1,7 @@
 package com.example.admin.lazada.Common;
 
+import com.facebook.AccessToken;
+
 /**
  * Created by ADMIN on 11/30/2017.
  */
@@ -7,4 +9,6 @@ package com.example.admin.lazada.Common;
 public interface MenuPressenterInface {
 
     void loadDataMenu();
+
+    public AccessToken getAccessToken();
 }

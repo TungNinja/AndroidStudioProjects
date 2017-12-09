@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Lazada</string>
     <string name="open">Mở</string>
     <string name="close">Đóng</string>
+    <string name="login_register_name">Đăng nhập/Đăng ký</string>
+    <string name="facebook_app_id">509950052533513</string>
+    <string name="google_plus_client">1013334443901-dfn8b1knuk2h824u2shht2qkja0954dk.apps.googleusercontent.com</string>
 </resources>

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.admin.lazada">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
 
         <activity android:name=".View.Welcome.WelcomeActivity"
             android:screenOrientation="portrait">
@@ -20,9 +23,12 @@
         </activity>
 
         <activity android:name=".View.Home.HomeActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"></activity>
 
-        </activity>
+        <activity android:name=".View.Register.Register"
+            android:label="@string/login_register_name"
+            android:screenOrientation="portrait"></activity>
+
     </application>
 
 </manifest>
